@@ -104,7 +104,7 @@
 	    <snapshotRepository>
 	      <id>admin</id>
 	      <name>Ram demo Snapshot Nexus Repository </name>
-	      <url>http://139.59.93.122:8081/repository/Maven-web/</url>
+	      <url>http://139.59.93.122:8081/repository/maven-snapshots/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
