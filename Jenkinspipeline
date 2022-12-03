@@ -14,7 +14,7 @@ properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKe
 
 
 stage('CheckOutCode'){
-git branch: 'development', credentialsId: '166c70a2-1df5-4993-a566-0a795862da8c', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
+git branch: 'development', credentialsId: 'ramkrishnagaddam', url: 'https://github.com/ramkrishnagaddam/maven-web-application.git'
 }
 
 stage('Build'){
@@ -30,8 +30,8 @@ sh "${mavenHome}/bin/mvn clean deploy"
 }
 
 stage('DeployAppIntoTomcatServer'){
-sshagent(['dc292b7a-3b39-4630-9fc3-1b806b54412c']) {
- sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war  ec2-user@172.31.7.80:/opt/apache-tomcat-9.0.65/webapps/"
+sshagent(['2a535e41-f163-4236-a119-1d7a4a048634']) {
+ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war  root@139.59.33.182:/opt/apache-tomcat-9.0.69/webapps"
 }
 }
 
