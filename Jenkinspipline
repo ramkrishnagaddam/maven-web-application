@@ -14,11 +14,11 @@ git branch: 'development', credentialsId: 'ramkrishnagaddam', url: 'https://gith
 stage('Build'){
 sh "${mavenHome}/bin/mvn clean package"
 }
-
+/*
 stage('ExecuteSonarQubeReport'){
 sh "${mavenHome}/bin/mvn clean sonar:sonar"
 }
-
+*/
 stage('UploadArtifcatsIntoArtifactoryRepo'){
 sh "${mavenHome}/bin/mvn clean deploy"
 }
